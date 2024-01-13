@@ -1,0 +1,10 @@
+fastapi
+mangum
+pydantic
+python-json-logger
+typing-extensions
+uvicorn
+pynamodb
+
+# authlib
+pydantic-settings
