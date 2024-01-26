@@ -58,7 +58,7 @@ functions:
   sample:
     name: ${self:custom.appName}-${self:provider.stage}-sample
     description: ${self:custom.appName}-${self:provider.stage}-sample
-    image: 388423642950.dkr.ecr.ap-southeast-1.amazonaws.com/sample/sample-lambda:latest
+    image: REPLACE_ME.dkr.ecr.ap-southeast-1.amazonaws.com/sample/sample-lambda:latest
     timeout: 30
     events: 
     - http:

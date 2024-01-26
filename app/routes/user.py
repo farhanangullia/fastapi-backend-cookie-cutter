@@ -10,11 +10,6 @@ class ProfileResponse(BaseModel):
     email: str
 
 
-# /user/info
-# if not in table, populate table entry.
-# returns roles/user object
-
-
 @router.get(
     "/profile",
     summary="Retrieve own profile",

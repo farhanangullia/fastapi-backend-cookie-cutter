@@ -1,4 +1,5 @@
 # fastapi-backend-cookie-cutter
+
 Template repo for FastAPI
 
 ### Prerequisites
@@ -8,29 +9,28 @@ Template repo for FastAPI
 
 ### Install dependencies
 
-A requirements file declare all dependencies (Mangum, FastAPI, Uvicorn, ...). Use the following command to install the required dependencies (For Python 3.11)
+Install the required dependencies (For Python 3.11)
 
 ```
 pip install -r ./requirements.txt
 ```
 
-TIP : Before installing required dependencies, do not forget to create a virtual environment using your favorite tool (Conda, ...).
 
 ### Run locally
 
-You can either use the following command :
+You can either use the following command:
 
 ```
 python -m app.main
 ```
 
-Or deploy on uvicorn :
+Or deploy on uvicorn:
 
 ```
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-You can test the application by using the following command : 
+Test: 
 
 ```
 curl http://localhost:8000/healthz/
@@ -38,7 +38,7 @@ curl http://localhost:8000/healthz/
 
 ### Build the 'regular' container
 
-This command builds a container which will run a Uvicorn server and deploy the ASGI app on it : 
+Build the container which will run a Uvicorn server and deploy the ASGI app on it: 
 
 ```
 docker build -t sample . 
@@ -46,13 +46,13 @@ docker build -t sample .
 
 ### Run the container
 
-The command starts the container :
+Start the container:
 
 ```
 docker run -p 8000:8000 sample:latest
 ```
 
-You can make a test with this command :
+Test:
 
 ```
 curl http://localhost:8000/healthz/
@@ -60,7 +60,7 @@ curl http://localhost:8000/healthz/
 
 ### Build the container for AWS Lambda
 
-Now we can build the container for AWS Lambda which will use the Mangum handler. We use another Dockerfile which will use a base image provided by AWS :
+Build the container for AWS Lambda which will use the Mangum handler:
 
 ```
 docker build -t sample-lambda . -f Dockerfile.aws.lambda
@@ -76,7 +76,7 @@ docker run -p 9000:8080 sample-lambda:latest
 
 ### Test the Lambda
 
-We send the input event that the lambda would receive from the API Gateway with the following command :
+Send the input event:
 
 ```
 curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{
